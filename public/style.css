@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
+/* Resets the document on refresh */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+/* Styling for the header */
 header {
     background: linear-gradient(90deg, rgba(131,58,180,1) 0%,
                                        rgba(252,39,29,1) 50%,
@@ -50,7 +51,7 @@ input {
     background-color: #bbb;
     color: #FFF;
 }
-
+/* Styles the list items */ 
 ul li {
     cursor: pointer;
     position: relative;
@@ -68,20 +69,23 @@ ul li {
     user-select: none;
 }
 
+/* This makes off list items to a different color */
 ul li:nth-child(odd) {
     background: #b2bec3;
 }
-
+/* When a user hovers it makes the background a darker color */
 ul li:hover {
     background: #ddd;
 }
 
+/* When a user clicks on, it adds a background color and strike out the text */
 ul li.checked {
     background: #888;
     color: #fff;
     text-decoration: line-through;
 }
 
+/* Adds a "checked" mark when clicked on */
 ul li.checked::before {
     content: "";
     position: absolute;
@@ -95,6 +99,7 @@ ul li.checked::before {
     width: 7px
 }
 
+/* Styling the trash button */
 .far {
     position: absolute;
     right: 0;

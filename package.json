@@ -1,0 +1,26 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "seed:dev": "nodemon ./db/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blor15/Todo-App_JS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blor15/Todo-App_JS/issues"
+  },
+  "homepage": "https://github.com/blor15/Todo-App_JS#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3"
+  }
+}
