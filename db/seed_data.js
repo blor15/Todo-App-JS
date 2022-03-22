@@ -3,7 +3,7 @@ const { createTodo } = require('./todos');
 
 
 async function createInitialTodos() {
-    console.log('Starting to creater mock todos');
+    console.log('Starting to create mock todos');
     try {
         const todos = await Promise.all(mockTodo.map((todo) => createTodo(todo))
         );

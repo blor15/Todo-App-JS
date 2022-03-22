@@ -1,18 +1,22 @@
 const { client } = require('./client');
 
-// async function dropTables() {
-//     try {
-//         console.log("Starting to drop tables...");
+const {
+    createInitialTodos
+} = require("./seed_data");
 
-//         await client.query(`
-//         DROP TABLE IF EXISTS todo;`);
+async function dropTables() {
+    try {
+        console.log("Starting to drop tables...");
 
-//         console.log("Finished dropping tables!");
-//     } catch (error) {
-//         console.error("Error while dropping tables!");
-//         throw error;
-//     }
-// }
+        await client.query(`
+        DROP TABLE IF EXISTS todo;`);
+
+        console.log("Finished dropping tables!");
+    } catch (error) {
+        console.error("Error while dropping tables!");
+        throw error;
+    }
+}
 
 
 async function createTables() {
@@ -35,8 +39,9 @@ async function createTables() {
 async function rebuildDB() {
     try {
 
-        // await dropTables();
+        await dropTables();
         await createTables();
+        await createInitialTodos();
         console.log('Finished rebuilding db!');
     } catch (error) {
         console.error('Error during rebuildDB');
