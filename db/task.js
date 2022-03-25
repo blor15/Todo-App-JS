@@ -1,25 +1,26 @@
 const { client } = require('./client');
 
-async function createTodo({
+async function createTask({
     title,
     description
 }) {
     try {
         const {
-            rows: [todo],
+            rows: [task],
         } = await client.query(
             `
-            INSERT INTO todo (title, description)
+            INSERT INTO task (title, description)
             VALUES ($1, $2)
             ON CONFLICT DO NOTHING
             RETURNING *;
             `,
             [title, description]
         );
-        return todo
+        return task
     } catch (error) {
         throw error;
     }
 }
 
-module.exports = { createTodo }
+
+module.exports = { createTask }

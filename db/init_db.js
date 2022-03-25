@@ -1,7 +1,7 @@
 const { client } = require('./client');
 
 const {
-    createInitialTodos
+    createInitialTasks
 } = require("./seed_data");
 
 async function dropTables() {
@@ -9,7 +9,7 @@ async function dropTables() {
         console.log("Starting to drop tables...");
 
         await client.query(`
-        DROP TABLE IF EXISTS todo;`);
+        DROP TABLE IF EXISTS task;`);
 
         console.log("Finished dropping tables!");
     } catch (error) {
@@ -23,7 +23,7 @@ async function createTables() {
     try {
         console.log('Starting to build tables...');
         await client.query(`
-        CREATE TABLE todo(
+        CREATE TABLE task(
           id SERIAL PRIMARY KEY NOT NULL,
           title VARCHAR(255) UNIQUE NOT NULL,
           description TEXT NOT NULL
@@ -41,7 +41,7 @@ async function rebuildDB() {
 
         await dropTables();
         await createTables();
-        await createInitialTodos();
+        await createInitialTasks();
         console.log('Finished rebuilding db!');
     } catch (error) {
         console.error('Error during rebuildDB');

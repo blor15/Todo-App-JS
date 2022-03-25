@@ -1,20 +1,20 @@
-const { mockTodo } = require('./mock_data');
-const { createTodo } = require('./todos');
+const { mockTask } = require('./mock_data');
+const { createTask } = require('./task');
 
 
-async function createInitialTodos() {
-    console.log('Starting to create mock todos');
+async function createInitialTasks() {
+    console.log('Starting to create mock task');
     try {
-        const todos = await Promise.all(mockTodo.map((todo) => createTodo(todo))
+        const tasks = await Promise.all(mockTask.map((task) => createTask(task))
         );
-        console.log('Finished creating todo');
-        return todos;
+        console.log('Finished creating task');
+        return tasks;
     } catch (error) {
-        console.error('Error creating todo');
+        console.error('Error creating task');
         throw error;
     }
 }
 
 module.exports = {
-    createInitialTodos
+    createInitialTasks
 };
