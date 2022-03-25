@@ -15,6 +15,14 @@ const mockTask = [{
     description: 'Did you go to the gym today?'
 }]
 
+const mockUser = [{
+    name: 'Jane Doe'
+},
+{
+    name: 'John Doe'
+}]
+
 module.exports = {
-    mockTask
+    mockTask,
+    mockUser
 };
