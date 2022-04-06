@@ -25,8 +25,8 @@ class Todo_Class {
     }
 
     done_undone(x) {
-        const selectedTodoIndex = todoObjectList.findIndex((item) => item.id == z);
-        console.log(todoObject[selectedTodoIndex].isDone);
+        const selectedTodoIndex = todoObjectList.findIndex((item) => item.id == x);
+        console.log(todoObjectList[selectedTodoIndex].isDone);
         todoObjectList[selectedTodoIndex].isDone == false ? todoObjectList[selectedTodoIndex].isDone = true : todoObjectList[selectedTodoIndex.isDone = false];
         this.display();
     }
