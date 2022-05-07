@@ -2,12 +2,14 @@
   "name": "todo-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
+    "server:start": "nodemon server.js",
     "db:dev": "nodemon ./db/seed.js",
-    "db:build": "node ./db/seed.js"
+    "db:build": "node ./db/seed.js",
+    "client:build": "react-scripts build",
+    "client:dev": "react-scripts start"
   },
   "repository": {
     "type": "git",
@@ -18,10 +20,24 @@
   "bugs": {
     "url": "https://github.com/blor15/Todo-App_JS/issues"
   },
-  "homepage": "https://github.com/blor15/Todo-App_JS#readme",
   "dependencies": {
     "express": "^4.17.3",
     "nodemon": "^2.0.15",
-    "pg": "^8.7.3"
+    "pg": "^8.7.3",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "^5.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
