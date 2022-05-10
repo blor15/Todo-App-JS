@@ -1,7 +1,7 @@
 //Web server
 const express = require('express');
-const { Server } = require('http');
 const app = express();
+const router = require('./routes')
 
 app.use(express.json());
 
@@ -19,10 +19,12 @@ app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`);
 });
 
+app.use('/', router);
+
 // Static Files
 // Used to build out the webpage and functionality
 const path = require('path');
-// app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "build")));
 
 // app.use(express.static(__dirname + 'public/style.css'))
 // app.use(express.static(__dirname + 'public/index.html'))

@@ -13,6 +13,7 @@ async function createUser({ name }) {
                 RETURNING *
             `, [name]);
 
+        console.log(user)
         return user;
     } catch (error) {
         throw error;
