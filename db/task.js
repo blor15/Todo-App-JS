@@ -16,7 +16,9 @@ async function createTask({
             `,
             [title, description]
         );
+        console.log(task)
         return task
+
     } catch (error) {
         throw error;
     }

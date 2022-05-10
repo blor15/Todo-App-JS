@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { getTasks } from "../api/tasks";
 
-const Tasks = (props) => {
+export const Tasks = (props) => {
 
     const [loading, setLoading] = useState(false);
     const [tasks, setTasks] = useState([]);
@@ -12,6 +12,7 @@ const Tasks = (props) => {
             setLoading(true);
 
             const data = await getTasks();
+            console.log(data);
 
             setLoading(false);
 
@@ -26,10 +27,11 @@ const Tasks = (props) => {
             <h2 className="task title">Tasks To Do</h2>
             <ul>
                 {tasks.map((task) => {
+                    console.log(task)
                     return (
-                        <div>
-                            <h2>{task.title}</h2>
-                            <p>{task.description}</p>
+                        <div key={task.id}>
+                            <h2>Task: {task.title}</h2>
+                            <p>Description: {task.description}</p>
                         </div>
                     )
                 })}
@@ -38,4 +40,4 @@ const Tasks = (props) => {
     )
 }
 
-export default Tasks;
+export default Tasks

@@ -4,12 +4,11 @@ import Tasks from './components/Tasks';
 
 const App = () => {
     return <div>
-        Hello World
+        <Tasks />
     </div>
 }
 
 ReactDOM.render(
-    // <Tasks />,
     <App />,
     document.getElementById('root'),
 );
